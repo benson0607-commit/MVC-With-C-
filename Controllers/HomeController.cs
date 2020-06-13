@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace WebApplication2.Controllers
 {
@@ -17,6 +19,7 @@ namespace WebApplication2.Controllers
         {
             // ViewBag.Message = "Your application description page.";
             ViewBag.json = new Client.Client().getJson();
+            //System.Diagnostics.Debug.WriteLine(ViewBag.json);
             ViewBag.cases = new Client.Client().getCases();
             return View();
         }
