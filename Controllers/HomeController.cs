@@ -16,10 +16,8 @@ namespace WebApplication2.Controllers
         public ActionResult About()
         {
             // ViewBag.Message = "Your application description page.";
-            foreach (var item in new Client.Client().download()) {
-                Console.WriteLine(item.確定病名);
-                ViewBag.Message += item.確定病名 + "\n";
-            }
+            ViewBag.json = new Client.Client().getJson();
+            ViewBag.cases = new Client.Client().getCases();
             return View();
         }
 
